@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# KoinX Frontend Intern Assignment - Tax Loss Harvesting UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the implementation of the KoinX Tax Loss Harvesting tool built as part of the frontend intern assignment.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Tax Optimisation Calculator**: Instantly see updated tax liabilities when selecting assets with losses.
+- **Responsive Layout**: Built with a mobile-first approach, fully responsive on tablets and desktops.
+- **Dynamic Interactions**: Features an interactive Holdings table, custom tooltips, expanding/collapsing sections, and sorting logic.
+- **Light & Dark Mode**: Seamlessly switch between light and dark themes using modern CSS variables and Tailwind CSS v4.
+- **Mock Data Integrations**: Uses simulated APIs for Capital Gains and Asset Holdings with realistic mock data, including proper handling of M/K suffix abbreviations for large numbers.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + TypeScript (built with Vite)
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
+- **Utilities**: `clsx` and `tailwind-merge`
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Ensure you have Node.js and npm installed.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JSHemanthRao/KoinX.git
+   cd KoinX
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Key Implementations
+
+- **Custom Hook (`useTaxHarvesting`)**: Manages complex states, sorting logic, and recalculations of realised capital gains based on user selections independently from the UI components.
+- **Tailwind V4 Themes**: Utilizes the modern CSS `@theme` architecture to create a crisp and scalable design system. Dark mode is implemented beautifully at the root level.
