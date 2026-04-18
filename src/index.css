@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg);
+  --color-card: var(--card);
+  --color-card-blue: var(--card-blue);
+  --color-text: var(--text-main);
+  --color-text-light: var(--text-light);
+  --color-border: var(--border-color);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-disclaimer-bg: var(--disclaimer-bg);
+  --color-disclaimer-border: var(--disclaimer-border);
+  --color-table-header: var(--table-header);
+  --color-table-row-hover: var(--table-row-hover);
+  --color-table-row-selected: var(--table-row-selected);
+}
+
+@layer base {
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --card-blue: #1e68f6;
+    --text-main: #1e293b;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --success: #10b981;
+    --danger: #ef4444;
+    --disclaimer-bg: #eff6ff;
+    --disclaimer-border: #bfdbfe;
+    --table-header: #f8fafc80;
+    --table-row-hover: #f8fafc;
+    --table-row-selected: #eff6ff80;
+  }
+
+  .dark {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-blue: #3b82f6;
+    --text-main: #f8fafc;
+    --text-light: #94a3b8;
+    --border-color: #334155;
+    --success: #34d399;
+    --danger: #f87171;
+    --disclaimer-bg: rgba(30, 58, 138, 0.2);
+    --disclaimer-border: #1e3a8a;
+    --table-header: #1e293b;
+    --table-row-hover: rgba(51, 65, 85, 0.5);
+    --table-row-selected: rgba(30, 58, 138, 0.3);
+  }
+
+  body {
+    @apply bg-background text-text antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
