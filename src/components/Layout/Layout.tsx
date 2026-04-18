@@ -1,4 +1,5 @@
-import { ReactNode, useState, useEffect } from 'react';
+import { useState } from 'react';
+import type { ReactNode } from "react";
 import { Sun, Moon } from 'lucide-react';
 
 export const Header = () => {
@@ -24,7 +25,7 @@ export const Header = () => {
           <span className="text-[10px] bg-yellow-100 text-yellow-600 font-semibold px-1 py-0.5 rounded ml-1 relative -top-2">TM</span>
         </div>
       </div>
-      <button 
+      <button
         onClick={toggleTheme}
         className="p-2 rounded-full hover:bg-background transition-colors focus:outline-none"
         aria-label="Toggle Dark Mode"
